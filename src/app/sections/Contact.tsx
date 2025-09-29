@@ -9,7 +9,7 @@ export default function Contact() {
         <p className="text-sm text-black font-semibold">
           No dudes en escribirnos por cualquier consulta.
         </p>
-        <div className="flex-col h-full md:flex-row">
+        <div className="flex flex-col h-full md:flex-row">
           <ContactForm />
           <div className="w-full md:w-1/2 flex items-center justify-center p-4">
             <div className="bg-primary h-5/6 w-5/6 rounded-3xl text-light p-6 flex flex-col justify-center text-center text-sm font-medium">
