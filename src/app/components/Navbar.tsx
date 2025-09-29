@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav className="w-full flex justify-center h-full">
         <div className="w-full max-w-[1300px] flex items-center justify-between">
           {/* Logo */}
-          <img
+          <Image
             src={logohorizontal}
             alt="Logo"
             width={150}
