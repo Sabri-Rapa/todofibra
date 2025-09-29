@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative h-[400px] flex items-center overflow-hidden">
       {/* Imagen de fondo */}
       <Image
-        src="/Images/portada.jpg"
+        src="/images/portada.jpg"
         alt="Fondo Hero"
         width={1920}
         height={1080}

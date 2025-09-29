@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function Features() {
   const features = [
-    { icon: "Images/icons/info001.webp", title: "Logística propia" },
-    { icon: "Images/icons/info002.webp", title: "Servicio post-venta" },
-    { icon: "Images/icons/info003.webp", title: "Garantía propia" },
-    { icon: "Images/icons/info004.webp", title: "Trabajos personalizados" },
-    { icon: "Images/icons/info005.webp", title: "Conciencia ecológica" },
+    { icon: "/icons/info001.png", title: "Logística propia" },
+    { icon: "/icons/info002.png", title: "Servicio post-venta" },
+    { icon: "/icons/info003.png", title: "Garantía propia" },
+    { icon: "/icons/info004.png", title: "Trabajos personalizados" },
+    { icon: "/icons/info005.png", title: "Conciencia ecológica" },
   ];
 
   return (
