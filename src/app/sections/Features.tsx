@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Features() {
   const features = [
-    { icon: "/icons/info001.webp", title: "Logística propia" },
+    { icon: "/icons/info001.jpeg", title: "Logística propia" },
     { icon: "/icons/info002.webp", title: "Servicio post-venta" },
     { icon: "/icons/info003.webp", title: "Garantía propia" },
     { icon: "/icons/info004.webp", title: "Trabajos personalizados" },
