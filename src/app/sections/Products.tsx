@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const products = [
-  { img: "/images/products/product-1.jpeg", title: "Producto 1" },
-  { img: "/images/products/product-2.jpeg", title: "Producto 2" },
-  { img: "/images/products/product-3.jpeg", title: "Producto 3" },
+  { img: "/assets/products/product-1.jpeg", title: "Producto 1" },
+  { img: "/assets/products/product-2.jpeg", title: "Producto 2" },
+  { img: "/assets/products/product-3.jpeg", title: "Producto 3" },
 ];
 
 export default function Products() {

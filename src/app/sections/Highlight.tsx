@@ -6,7 +6,7 @@ export default function Highlight() {
 
       <div className="absolute inset-0 flex justify-center items-start w-full h-full top-5">
         <Image
-          src="/Images/logo/tf_multiply.png"
+          src="/assets/logo/tf_multiply.png"
           alt="TF Logo top-0 left-1/2"
           width={1000}
           height={1000}
