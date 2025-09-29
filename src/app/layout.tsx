@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Navbar />
       
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

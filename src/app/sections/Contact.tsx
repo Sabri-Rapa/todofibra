@@ -2,16 +2,16 @@ import ContactForm from "../components/ContactForm";
 
 export default function Contact() {
   return (
-    <section className="py-12 bg-light  text-center">
+    <section className="py-12 bg-light  text-center" id="contact">
       <h2 className="text-2xl font-bold mb-2 text-primary">CONTACTANOS</h2>
 
       <div className="mt-2 px-4">
         <p className="text-sm text-black font-semibold">
           No dudes en escribirnos por cualquier consulta.
         </p>
-        <div className="flex h-full">
+        <div className="flex-col h-full md:flex-row">
           <ContactForm />
-          <div className="w-1/2 flex items-center justify-center p-4">
+          <div className="w-full md:w-1/2 flex items-center justify-center p-4">
             <div className="bg-primary h-5/6 w-5/6 rounded-3xl text-light p-6 flex flex-col justify-center text-center text-sm font-medium">
               <p>DATOS DE CONTACTO</p>
               <p>Teléfono: +54 9 11 1234 5678</p>
