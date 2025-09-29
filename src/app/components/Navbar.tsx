@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
-  const logohorizontal = "/images/logo/logohorizontal.png";
+  const logohorizontal = "/assets/logo/logohorizontal.png";
   return (
     <header className="sticky top-0 z-50 bg-light shadow-sm h-20 w-full">
       <nav className="w-full flex justify-center h-full">
