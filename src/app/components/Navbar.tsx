@@ -12,6 +12,8 @@ export default function Navbar() {
             alt="Logo"
             width={150}
             height={50}
+            priority
+            unoptimized
           />
 
           {/* Menú */}
