@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import logoHorizontal from "/public/images/logo/logohorizontal.png";
 
 export default function Navbar() {
   return (
@@ -8,7 +9,7 @@ export default function Navbar() {
         <div className="w-full max-w-[1300px] flex items-center justify-between">
           {/* Logo */}
           <Image
-            src="/logo/logohorizontal.png"
+            src={logoHorizontal}
             alt="Logo"
             width={150}
             height={50}
