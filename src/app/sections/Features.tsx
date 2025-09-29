@@ -1,9 +1,9 @@
 import Image from "next/image";
-import info001 from "/public/icons/info001.png";
-import info002 from "/public/icons/info002.png";
-import info003 from "/public/icons/info003.png";
-import info004 from "/public/icons/info004.png";
-import info005 from "/public/icons/info005.png";
+import info001 from "@/public/icons/info001.png";
+import info002 from "@/public/icons/info002.png";
+import info003 from "@/public/icons/info003.png";
+import info004 from "@/public/icons/info004.png";
+import info005 from "@/public/icons/info005.png";
 
 
 export default function Features() {
