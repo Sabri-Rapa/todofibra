@@ -1,18 +1,18 @@
 import Image from "next/image";
-import info001 from "@/public/icons/info001.png";
-import info002 from "@/public/icons/info002.png";
-import info003 from "@/public/icons/info003.png";
-import info004 from "@/public/icons/info004.png";
-import info005 from "@/public/icons/info005.png";
+// import info001 from "/icons/info001.png";
+// import info002 from "/icons/info002.png";
+// import info003 from "/icons/info003.png";
+// import info004 from "/icons/info004.png";
+// import info005 from "/icons/info005.png";
 
 
 export default function Features() {
   const features = [
-    { icon: info001, title: "Logística propia" },
-    { icon: info002, title: "Servicio post-venta" },
-    { icon: info003, title: "Garantía propia" },
-    { icon: info004, title: "Trabajos personalizados" },
-    { icon: info005, title: "Conciencia ecológica" },
+    { icon: "/icons/info001.png", title: "Logística propia" },
+    { icon: "/icons/info002.png", title: "Servicio post-venta" },
+    { icon: "/icons/info003.png", title: "Garantía propia" },
+    { icon: "/icons/info004.png", title: "Trabajos personalizados" },
+    { icon: "/icons/info005.png", title: "Conciencia ecológica" },
   ];
 
   return (
