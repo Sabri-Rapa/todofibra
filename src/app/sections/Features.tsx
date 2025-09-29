@@ -1,10 +1,4 @@
 import Image from "next/image";
-// import info001 from "/icons/info001.png";
-// import info002 from "/icons/info002.png";
-// import info003 from "/icons/info003.png";
-// import info004 from "/icons/info004.png";
-// import info005 from "/icons/info005.png";
-
 
 export default function Features() {
   const features = [
