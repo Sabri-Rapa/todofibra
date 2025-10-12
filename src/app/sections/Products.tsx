@@ -73,11 +73,13 @@ export default function Products() {
 
               {/* Texto */}
                 <h3
-                className="
-                  absolute inset-0 flex items-center justify-center
-                  px-4 text-white text-xl sm:text-xl font-semibold
-                  tracking-wide drop-shadow-md text-center
-                "
+                  className="
+                    absolute inset-0 flex items-center sm:md:lg:items-end justify-center
+                    px-4 text-white text-xl font-semibold
+                    tracking-wide drop-shadow-md text-center sm:md:lg:pb-6
+
+            
+                  "
                 >
                 {product.title}
                 </h3>
