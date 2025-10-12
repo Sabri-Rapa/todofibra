@@ -1,42 +1,89 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
-const products = [
-  { img: "/assets/products/product-1.jpeg", title: "Producto 1" },
-  { img: "/assets/products/product-2.jpeg", title: "Producto 2" },
-  { img: "/assets/products/product-3.jpeg", title: "Producto 3" },
+const productsA = [
+  { img: "/assets/products/encofrados.jpg", title: "Encofrados" },
+  { img: "/assets/products/piletas.jpg", title: "Piletas" },
+  {
+    img: "/assets/products/impermeabilizacion.jpg",
+    title: "Impermeabilización",
+  },
+  { img: "/assets/products/tanques.jpg", title: "Tanques" },
+  { img: "/assets/products/varios.jpg", title: "Rubros Varios" },
 ];
 
 export default function Products() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
-    <section className="py-12 bg-background md:bg-background">
-      <h2 className="text-2xl font-bold text-center mb-8 text-primary">
-        NUESTROS PRODUCTOS
+    <section
+      className="py-0 bg-background sm:py-10 md:py-10 lg:py-10 "
+      id="productos"
+    >
+      <h2 className="text-3xl font-extrabold text-center mb-6 text-primary pt-4">
+        Nuestros Productos
       </h2>
-      <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center p-4 rounded-lg transition"
-          >
-            <Image
-              src={product.img}
-              alt={product.title}
-              width={300}
-              height={300}
-              className="mb-4 rounded-lg object-cover"
-            />
-            <h3 className="text-lg font-semibold text-primary mb-2">
-              {product.title}
-            </h3>
+
+      {/* Contenedor general */}
+      <div className="w-full">
+        <div
+          className="
+            flex flex-col md:flex-row
+            w-full overflow-hidden
+            transition-all duration-500
+          "
+          onMouseLeave={() => setHovered(null)}
+        >
+          {productsA.map((product, index) => (
             <Link
-              href="/contacto"
-              className="inline-block bg-background text-primary border border-primary rounded px-4 py-2 text-sm md:text-base font-semibold transition hover:bg-primary hover:text-white"
+              key={index}
+              href="/productos"
+              onMouseEnter={() => setHovered(index)}
+              className={`
+                relative overflow-hidden transition-all duration-500 ease-in-out 
+                h-[150px] sm:h-[350px] md:h-[400px] lg:h-[450px]
+                ${
+                  hovered === index
+                    ? "md:flex-[2]" // efecto en desktop
+                    : hovered === null
+                    ? "md:flex-1"
+                    : "md:flex-[0.8]"
+                }
+                flex-shrink-0 w-full md:w-auto
+              `}
             >
-              Más información
+              {/* Imagen */}
+              <Image
+                src={product.img}
+                alt={product.title}
+                fill
+                className={`object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  hovered === index ? "scale-[1.02]" : "scale-100"
+                }`}
+              />
+
+              {/* Overlay */}
+              <div
+                className={`absolute inset-0 transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  hovered === index ? "bg-black/25" : "bg-black/50"
+                }`}
+              />
+
+              {/* Texto */}
+                <h3
+                className="
+                  absolute inset-0 flex items-center justify-center
+                  px-4 text-white text-xl sm:text-xl font-semibold
+                  tracking-wide drop-shadow-md text-center
+                "
+                >
+                {product.title}
+                </h3>
             </Link>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

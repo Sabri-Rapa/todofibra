@@ -5,12 +5,10 @@ interface NavbarLinksProps {
 }
 
 const links = [
-  { href: "#hero", label: "INICIO" },
-  { href: "#empresa", label: "EMPRESA" },
+  { href: "/", label: "INICIO" },
+  { href: "/empresa", label: "EMPRESA" },
   { href: "#productos", label: "PRODUCTOS" },
-  { href: "#tecnologia", label: "TECNOLOGÍA" },
-  { href: "#proyectos", label: "PROYECTOS REALIZADOS" },
-  { href: "#contacto", label: "CONTACTOS" },
+  { href: "#contact", label: "CONTACTO" },
 ];
 
 export default function NavbarLinks({ onClick }: NavbarLinksProps) {

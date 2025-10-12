@@ -12,8 +12,16 @@ export default function Features() {
   function FeatureItem({ icon, title }: { icon: string; title: string }) {
     return (
       <div className="flex flex-col items-center text-center">
-        <Image src={icon} alt={title} width={60} height={60} />
-        <h3 className="text-sm font-semibold mt-2">{title}</h3>
+        <Image
+          src={icon}
+          alt={title}
+          width={70}
+          height={70}
+          className="w-10 h-10 sm:w-14 sm:h-14 md:w-[70px] md:h-[70px]"
+        />
+        <h3 className="text-xs sm:text-sm md:text-base font-semibold mt-2">
+          {title}
+        </h3>
       </div>
     );
   }
@@ -27,7 +35,7 @@ export default function Features() {
         <p className="text-sm font-semibold mb-2 text-balance tracking-wide md:text-lg lg:text-lg">
           Ofrecemos servicios especializados en{" "}
           <span className="text-primary">fabricación</span>,{" "}
-          <span className="text-primary">reparación</span> y
+          <span className="text-primary">reparación</span> y{" "}
           <span className="text-primary">mantención de piezas y equipos</span>{" "}
           en fibra de vidrio, garantizando{" "}
           <span className="text-primary">calidad</span> y{" "}
