@@ -33,13 +33,11 @@ export default function Features() {
     >
       <div className="container max-w-3xl">
         <p className="text-sm font-semibold mb-2 text-balance tracking-wide md:text-lg lg:text-lg">
-          Ofrecemos servicios especializados en{" "}
-          <span className="text-primary">fabricación</span>,{" "}
-          <span className="text-primary">reparación</span> y{" "}
-          <span className="text-primary">mantención de piezas y equipos</span>{" "}
-          en fibra de vidrio, garantizando{" "}
-          <span className="text-primary">calidad</span> y{" "}
-          <span className="text-primary">durabilidad</span> para tu empresa.
+          Con más de <span className="text-primary">45 años</span> de
+          experiencia en el mercado del PRFV, nos destacamos por nuestro{" "}
+          <span className="text-primary">conocimiento técnico</span> y la{" "}
+          <span className="text-primary">amplia experiencia</span> en la
+          aplicación del material en sus diversos usos.
         </p>
       </div>
 
