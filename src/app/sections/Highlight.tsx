@@ -9,7 +9,7 @@ export default function Highlight() {
           alt="TF Logo top-0 left-1/2"
           width={1000}
           height={1000}
-          className=""
+          className="h-[450px] w-auto"
         />
       </div>
       {/* Contenido */}

@@ -1,15 +1,20 @@
 "use client";
 
 import { useFormik } from "formik";
+import { useState } from "react";
 import * as Yup from "yup";
 
 export default function ContactForm() {
+  const [status, setStatus] = useState<null | "ok" | "error">(null);
+  const [errorMsg, setErrorMsg] = useState<string>("");
+
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
       phone: "",
       message: "",
+      company: "", // honeypot (no mostrar)
     },
 
     validationSchema: Yup.object({
@@ -28,11 +33,37 @@ export default function ContactForm() {
         .min(10, "El mensaje es muy corto")
         .max(500, "El mensaje es muy largo")
         .required("El mensaje es obligatorio"),
+      company: Yup.string().max(0), // honeypot debe quedar vacío
     }),
 
-    onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      resetForm();
+    onSubmit: async (values, { resetForm, setSubmitting }) => {
+      setStatus(null);
+      setErrorMsg("");
+
+      try {
+        const res = await fetch("/contact.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok || data?.ok !== true) {
+          throw new Error(data?.error || "Error enviando el formulario");
+        }
+
+        setStatus("ok");
+        resetForm();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (error: any) {
+        setStatus("error");
+        setErrorMsg(
+          error instanceof Error ? error.message : "Ocurrió un error"
+        );
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
 
@@ -54,6 +85,18 @@ export default function ContactForm() {
         {formik.touched.name && formik.errors.name ? (
           <div className="text-red-500 text-sm">{formik.errors.name}</div>
         ) : null}
+
+        {/* Honeypot */}
+        <input
+          type="text"
+          name="company"
+          value={formik.values.company}
+          onChange={formik.handleChange}
+          className="hidden"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+        
         <input
           type="email"
           name="email"

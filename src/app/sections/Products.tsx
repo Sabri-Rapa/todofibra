@@ -3,15 +3,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const productsA = [
-  { img: "/assets/products/encofrados.jpg", title: "Encofrados" },
-  { img: "/assets/products/piletas.jpg", title: "Piletas" },
+type Product = {
+  slug: "encofrados" | "piletas" | "impermeabilizacion" | "tanques" | "varios";
+  img: string;
+  title: string;
+};
+
+const products: Product[] = [
   {
+    slug: "encofrados",
+    img: "/assets/products/encofrados.jpg",
+    title: "Encofrados",
+  },
+  { slug: "piletas", img: "/assets/products/piletas.jpg", title: "Piletas" },
+  {
+    slug: "impermeabilizacion",
     img: "/assets/products/impermeabilizacion.jpg",
     title: "Impermeabilización",
   },
-  { img: "/assets/products/tanques.jpg", title: "Tanques" },
-  { img: "/assets/products/varios.jpg", title: "Rubros Varios" },
+  { slug: "tanques", img: "/assets/products/tanques.jpg", title: "Tanques" },
+  {
+    slug: "varios",
+    img: "/assets/products/varios.jpg",
+    title: "Rubros Varios",
+  },
 ];
 
 export default function Products() {
@@ -36,14 +51,14 @@ export default function Products() {
           "
           onMouseLeave={() => setHovered(null)}
         >
-          {productsA.map((product, index) => (
+          {products.map((product, index) => (
             <Link
               key={index}
-              href="/productos"
+              href={`/productos/${product.slug}`}
               onMouseEnter={() => setHovered(index)}
               className={`
                 relative overflow-hidden transition-all duration-500 ease-in-out 
-                h-[150px] sm:h-[350px] md:h-[400px] lg:h-[450px]
+                h-[150px] sm:h-[350px] md:h-[400px] lg:h-[450px] 
                 ${
                   hovered === index
                     ? "md:flex-[2]" // efecto en desktop
@@ -59,7 +74,7 @@ export default function Products() {
                 src={product.img}
                 alt={product.title}
                 fill
-                className={`object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                className={`object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer ${
                   hovered === index ? "scale-[1.02]" : "scale-100"
                 }`}
               />
@@ -72,17 +87,14 @@ export default function Products() {
               />
 
               {/* Texto */}
-                <h3
-                  className="
+              <h3
+                className="
                     absolute inset-0 flex items-center sm:md:lg:items-end justify-center
                     px-4 text-white text-xl font-semibold
-                    tracking-wide drop-shadow-md text-center sm:md:lg:pb-6
-
-            
-                  "
-                >
+                    tracking-wide drop-shadow-md text-center sm:md:lg:pb-6"
+              >
                 {product.title}
-                </h3>
+              </h3>
             </Link>
           ))}
         </div>
